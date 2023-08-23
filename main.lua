@@ -1,3 +1,6 @@
+local pixelFont = love.graphics.newFont("font/poxel-font.ttf", 24)
+love.graphics.setFont(pixelFont)
+pixelFont:setFilter("nearest", "nearest")
 function love.load()
     paddleWidth = 14
     paddleHeight = 120
@@ -40,8 +43,8 @@ function love.draw()
     love.graphics.rectangle("fill", paddleX, paddleY, paddleWidth, paddleHeight)
     love.graphics.rectangle("fill", paddle1X, paddle1Y, paddleWidth, paddleHeight)
     love.graphics.circle("fill", ballPosX, ballPosY, ballRadius)
-    love.graphics.print(playerScore, love.graphics.getWidth()/2 - 50, 120, 0, 5)
-    love.graphics.print(enemyScore, love.graphics.getWidth()/2 + 50, 120, 0 , 5)
+    love.graphics.print(playerScore, love.graphics.getWidth()/2 - 100, 60, 0, 5)
+    love.graphics.print(enemyScore, love.graphics.getWidth()/2 + 30, 60, 0 , 5)
     elseif playerWon == true then
         love.graphics.print("You win!", love.graphics.getWidth()/2 - 100, love.graphics.getHeight()/2 , 0, 5)
     elseif playerLost == true then
